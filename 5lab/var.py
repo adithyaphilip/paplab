@@ -5,5 +5,7 @@ for l in f:
     for w in l.split():
         if(w[0] not in d): d[w[0]]=[w]
         else: d[w[0]].append(w)
+f = open("output","w")
 for k in sorted(d.keys()):
-    print(k,len(d[k]),list(set(d[k])))
+    f.write(" ".join((k,str(len(d[k])),str(list(set(d[k])))))+"\n")
+f.close()
